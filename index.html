@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/src/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="output.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+
+        <div class="flex justify-center w-screen h-screen weather-app">
+            <!--! FIRST DIV -->
+            <div class="bg-[#EEEEFF] w-[70%] dark:bg-[#0f2836]"> <!--  bg-[#f8f8f8] -->
+                <nav class="navbar flex flex-row justify-around px-6 py-3 h-[5rem] items-center overflow-hidden">
+                    <a href="#" class="first md:w-fit">
+                        <img src="/images/main-1.png" alt="" class="w-[50px] h-auto">
+                    </a>
+                    <div class="time flex flex-col second_1 md:w-full ">
+                        <h1 class="current_time font-bold text-2xl text-[#3dbce9] py-1">08:30 AM</h1>
+                        <p class="current_date text-[#999999] dark:text-white">Saturday, 02 September 2024</p>
+                    </div>
+
+                    <div id="locationinput" class="third flex justify-center items-center bg-white h-[70%] w-[35%] rounded-lg shadow-md md:w-[140%] md:h-[2.5rem]">
+                        <input type="text" placeholder="Search for Cities" id="search" class="search  w-[80%] h-full pl-4 outline-none border-none">
+                        <button type="submit"  id="submit" class=" submit cursor-pointer h-full  items-center flex w-[20%] justify-center text-[#3dbce9] text-lg" > 
+                            <i class="ri-search-line "></i>
+                        </button>
+                    </div>
+
+                    <div class="dark_mode fourth md:w-[50%]  md:text-right md:ml-16 md:pr-4">
+                        <i class="ri-moon-line cursor-pointer text-2xl text-[#69c9ee] " id="theme-toggle"></i>
+                    </div>
+                    <div class=" flex text-[#6e6e6e] gap-4 fifth">
+                        <div class=" far bg-white rounded-[50%] w-[40px] h-[40px] flex  justify-center items-center border-[2px] border-solid border-[#c9c7c7] p-0 cursor-pointer hover:bg-[#3dbce9] hover:text-white text-[#6e6e6e] hover:border-white">
+                            <h1>&#176;F</h1>
+                        </div>
+                        <div class=" cel bg-white rounded-[50%] w-[40px] h-[40px] flex  justify-center items-center border-[2px] border-solid border-[#c9c7c7] p-0 cursor-pointer hover:bg-[#3dbce9] hover:text-white text-[#6e6e6e] hover:border-white change-color">
+                            <h1>&#176;C</h1>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="forecast flex flex-col justify-center items-start w-full h-[250px] px-9 gap-2">
+                    <h1 class="text-xl  text-[#696969] dark:text-white"><span class="text-black font-semibold pr-1 dark:text-[#3dbce9]">Weather</span>
+                        Forecast
+                    </h1>
+                    <div class="cities flex  justify-between items-center w-full gap-4 h-auto md:flex-col ">
+                        <a
+                            class="city w-[200px] relative h-[200px] flex justify-start overflow-y-hidden cursor-pointer rounded-xl hover:shadow-xl">
+                            <p class="z-[1] ml-3 mt-2 city-name">London</p>
+                            <img src="/images/london-1.jpg" alt="" class="absolute object-contain z-[0]">
+                        </a>
+                        <a
+                            class="city w-[200px] relative h-[200px] flex justify-start overflow-y-hidden cursor-pointer rounded-xl hover:shadow-xl">
+                            <p class="z-[1] ml-3 mt-2 city-name">Paris</p>
+                            <img src="/images/paris.png" alt="" class="absolute object-contain z-0">
+                        </a>
+                        <a
+                            class="city w-[200px] relative h-[200px] flex justify-start overflow-y-hidden cursor-pointer rounded-xl hover:shadow-xl">
+                            <p class="z-[1] ml-3 mt-2 city-name">Agra</p>
+                            <img src="/images/taj mahal.png" alt="" class="absolute object-contain z-0 h-fit">
+                        </a>
+                        <a
+                            class="city w-[200px] relative h-[200px] flex justify-start overflow-y-hidden cursor-pointer rounded-xl hover:shadow-xl">
+                            <p class="z-[1] ml-3 mt-2 city-name">Bangkok</p>
+                            <img src="/images/bangkok.png" alt="" class="absolute object-contain z-0">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card_container w-full px-9 justify-center py-2 h-auto">
+                    <h1 class="text-2xl py-2 dark:text-[#3dbce9]">Week</h1>
+                    <div class="cards flex flex-wrap justify-start  gap-4  w-full md:justify-center">
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Sunday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Clouds</p>
+                                </div>
+                                <div class=" icons icon-1">
+                                    <img src="/images/cloudy-1.png" alt="" class="icons-img w-[47px]">
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">19km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">29&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Monday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Rain</p>
+                                </div>
+                                <div class="icons icon-2">
+                                    <img src="/images/rainy-1.png" alt="" class="icons-img w-[47px] " >
+                                    
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">20km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">30&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Tuesday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Clear</p>
+                                </div>
+                                <div class="icons icon-3">
+                                    <img src="/images/sunny.png" alt="" class="icons-img w-[47px] " >
+                                    
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">8km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">22&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Wednesday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Clear</p>
+                                </div>
+                                <div class="icons icon-4">
+                                    <img src="/images/sunny.png" alt="" class="icons-img w-[47px] " >
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">15km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">26&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Thursday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Clouds</p>
+                                </div>
+                                <div class=" icons icon-5">
+                                    <img src="/images/sunny-cloud.png" alt="" class="icons-img w-[47px]" >
+                                    
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">15km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">16&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card w-[250px] h-[160px] flex flex-col bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-center gap-6 items-center">
+                            <div class="flex flex-row w-full justify-between items-center gap-4 px-3">
+                                <div>
+                                    <h1 class="day text-xl">Saturday</h1>
+                                    <p class="weather text-xs text-[#696969] p-0">Clouds</p>
+                                </div>
+                                <div class=" icons icon-6">
+                                    <img src="/images/cloudy-1.png" alt="" class="icons-img w-[47px]">
+                                </div>
+                                <!-- <img src="/images/01_sunny_color_w32.png" alt="" class="w-[40px]"> -->
+                            </div>
+                            <div class="flex flex-row justify-between w-full px-3">
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/haze.png" alt="" class="w-[50px]">
+                                    <p class="speed">15km/h</p>
+                                </div>
+                                <div class="flex justify-center items-center gap-0 p-0">
+                                    <img src="/images/thermometer.png" alt="" class="w-[30px]">
+                                    <p class="temperature text-[1.5rem]">26&#176;C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlights w-full px-9 justify-center py-2 h-auto">
+                    <h1 class="text-xl  text-[#696969] dark:text-white"><span
+                            class="text-black font-semibold pr-2 dark:text-[#3dbce9]">Today's</span>Highlights<h1>
+                            <div class="three_deck flex flex-wrap justify-center items-center gap-4  w-full py-3">
+                                <div
+                                    class="three w-[280px] h-[160px] flex flex-row bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-between gap-6 items-center px-6">
+                                    <div class="flex flex-col w-full justify-center items-center gap-4  h-full">
+                                        <p class=" text-sm text-[#696969] dark:text-[#0f2836]">Humidity</p>
+                                        <h1 class="thumidity text-4xl overflow-hidden ">20%</h1>
+                                        <p class="status ">Normal</p>
+                                    </div>
+                                    <img src="/images/humidity.png" alt="" class="w-[150px]">
+                                </div>
+                                <div class="three w-[280px] h-[160px] flex flex-row bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-between gap-6 items-center px-6">
+                                    <div class="flex flex-col w-full justify-center items-center gap-4  h-full">
+                                        <p class="text-sm text-[#696969] dark:text-[#0f2836]">Air Quality</p>
+                                        <h1 class="air text-4xl overflow-hidden">73</h1>
+                                        <p class="air-status">Poor</p>
+                                    </div>
+                                    <img src="/images/air.png" alt="" class="w-[120px]">
+                                </div>
+                                <div
+                                    class="three w-[280px] h-[160px] flex flex-row bg-[#f8f8f8] border-[2px] border-solid rounded-lg justify-between gap-6 items-center px-6">
+                                    <div class="flex flex-col w-full justify-center items-center gap-4  h-full">
+                                        <p class="text-sm text-[#696969] dark:text-[#0f2836]">Visibility</p>
+                                        <h1 class="visibility text-4xl overflow-hidden">6.3 km</h1>
+                                        <p class="visibility-status">Average</p>
+                                    </div>
+                                    <!-- <img src="/images/humidity.png" alt="" class="w-[150px]"> -->
+                                </div>
+                            </div>
+                </div>
+            </div>
+
+            <!--! SECOND DIV -->
+            <div class="second w-[30%] flex flex-col justify-center items-center h-full relative">
+                <!-- <img src="/images/blue-1.jpg" alt="" class="w-full h-full absolute z-[-1]"> -->
+
+                <div class="flex text-white text-xl md:text-base">
+                    <i class="ri-map-pin-line"></i>
+                    <p class="name pl-1">Bangladesh</p>
+                </div>
+                <div class="flex justify-center items-center text-white ">
+                    <h1 class="temp text-6xl py-4 md:text-3xl">19&#176;C</h1>
+                </div>
+                <div>
+                    <h1 class="weathertype text-2xl text-yellow-400">Clear</h1>
+                </div>
+                <div class="flex justify-center pt-1 text-white gap-3">
+                    <div class="flex gap-1">
+                        <p>H:</p>
+                        <p class="humidity">24%</p>
+                    </div>
+                    <div class="flex gap-1">
+                        <p>W:</p>
+                        <p class="wind">8km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- <script src="main.js"></script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>
